@@ -16,7 +16,7 @@ function ContactForm() {
     setStatus("");
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}contact`,
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/contact`,
         {
           method: "POST",
           headers: {

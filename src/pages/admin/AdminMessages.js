@@ -19,7 +19,7 @@ function AdminMessages() {
 
     try {
       const res = await fetch(
-       `${process.env.REACT_APP_API_URL}i/contact`,
+       `${process.env.REACT_APP_API_URL}/contact`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

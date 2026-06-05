@@ -14,7 +14,7 @@ function Login() {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/auth/login",
+        `${process.env.REACT_APP_API_URL}/auth/login`,
         {
           method: "POST",
           headers: {
@@ -75,11 +75,10 @@ function Login() {
 
         {message && (
           <p
-            className={`text-center mt-4 text-sm ${
-              message.includes("successful")
+            className={`text-center mt-4 text-sm ${message.includes("successful")
                 ? "text-green-600"
                 : "text-red-500"
-            }`}
+              }`}
           >
             {message}
           </p>

@@ -27,9 +27,16 @@ function Register() {
       return;
     }
 
+    if (password.length < 6) {
+  setMessage(
+    "Password must be at least 6 characters long"
+  );
+  return;
+}
+
     try {
       const res = await fetch(
-        "http://localhost:5000/api/auth/register",
+  `${process.env.REACT_APP_API_URL}/auth/register`,
         {
           method: "POST",
           headers: {

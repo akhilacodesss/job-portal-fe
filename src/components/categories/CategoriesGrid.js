@@ -36,7 +36,7 @@ function CategoriesGrid() {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}jobs/categories`);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/jobs/categories`);
 
         const data = await res.json();
 

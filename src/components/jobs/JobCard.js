@@ -9,83 +9,83 @@ import {
 } from "react-icons/bs";
 
 import { IoCashOutline } from "react-icons/io5";
-import {useState , useEffect} from "react";
-import {useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function JobCard({ job }) {
   const [saved, setSaved] = useState(false);
 
   const navigate = useNavigate();
 
-useEffect(() => {
-  async function checkSaved() {
+  useEffect(() => {
+    async function checkSaved() {
+      const token = localStorage.getItem("token");
+
+      if (!token) return;
+
+      try {
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/saved-jobs`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        const data = await res.json();
+
+        const isSaved = data.savedJobs?.some(
+          (item) => item.job?._id === job._id
+        );
+
+        setSaved(isSaved);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    checkSaved();
+  }, [job._id]);
+
+  async function toggleSaveJob() {
     const token = localStorage.getItem("token");
 
-    if (!token) return;
+    if (!token) {
+      navigate("/login");
+      return;
+    }
 
     try {
-      const res = await fetch(
-       `${process.env.REACT_APP_API_URL}/saved-jobs`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      if (saved) {
+        await fetch(
+          `${process.env.REACT_APP_API_URL}saved-jobs/${job._id}`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
-      const data = await res.json();
+        setSaved(false);
+      } else {
+        await fetch(
+          `${process.env.REACT_APP_API_URL}/saved-jobs/${job._id}`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
-      const isSaved = data.savedJobs?.some(
-        (item) => item.job?._id === job._id
-      );
-
-      setSaved(isSaved);
+        setSaved(true);
+      }
     } catch (err) {
       console.log(err);
     }
   }
-
-  checkSaved();
-}, [job._id]);
-
-async function toggleSaveJob() {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    navigate("/login");
-    return;
-  }
-
-  try {
-    if (saved) {
-      await fetch(
-        `${process.env.REACT_APP_API_URL}saved-jobs/${job._id}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      setSaved(false);
-    } else {
-      await fetch(
-        `${process.env.REACT_APP_API_URL}/saved-jobs/${job._id}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      setSaved(true);
-    }
-  } catch (err) {
-    console.log(err);
-  }
-}
 
   return (
     <div
@@ -109,28 +109,22 @@ async function toggleSaveJob() {
           {/* Logo */}
           <div
             className="
-              w-20
-              h-20
-              rounded-2xl
-              border
-              border-gray-100
-              flex
-              items-center
-              justify-center
-              shrink-0
-              bg-white
-            "
+    w-20
+    h-20
+    rounded-2xl
+    border
+    border-gray-100
+    flex
+    items-center
+    justify-center
+    shrink-0
+    bg-indigo-50
+  "
           >
-            <img
-              src={
-                job.companyLogo ||
-                "https://cdn.simpleicons.org/google"
-              }
-              alt={job.company}
-              className="w-12 h-12 object-contain"
-            />
+            <span className="text-indigo-600 text-4xl font-bold">
+              {job.company?.charAt(0)}
+            </span>
           </div>
-
           {/* Info */}
           <div>
 
@@ -211,9 +205,9 @@ async function toggleSaveJob() {
         {/* Right */}
         <div className="flex flex-col items-end gap-4">
 
-       <button
-  onClick={toggleSaveJob}
-  className="
+          <button
+            onClick={toggleSaveJob}
+            className="
     w-12
     h-12
     border
@@ -223,16 +217,16 @@ async function toggleSaveJob() {
     items-center
     justify-center
   "
->
-  {saved ? (
-    <BsBookmarkFill
-      size={20}
-      className="text-indigo-600"
-    />
-  ) : (
-    <BsBookmark size={20} />
-  )}
-</button>
+          >
+            {saved ? (
+              <BsBookmarkFill
+                size={20}
+                className="text-indigo-600"
+              />
+            ) : (
+              <BsBookmark size={20} />
+            )}
+          </button>
 
           <button
             onClick={() =>
