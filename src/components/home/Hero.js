@@ -25,18 +25,19 @@ function Hero() {
           <div>
 
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Find Your
+              Discover
               <br />
               <span className="text-indigo-600">
-                Dream Job
+                opportunities 
               </span>
               <br />
-              Today
+              That Matter
             </h1>
 
             <p className="text-gray-600 mt-5 text-lg max-w-md">
-              Discover top job opportunities from thousands of companies
-              around the world.
+              Your next career move starts here
+              <br />
+              discover jobs from trusted companies worldwide.
             </p>
 
             <div className="bg-white shadow-lg rounded-xl p-3 mt-8 flex flex-col md:flex-row gap-3">
