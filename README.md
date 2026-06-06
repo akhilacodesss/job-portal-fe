@@ -1,70 +1,318 @@
-# Getting Started with Create React App
+# 💼 JobHub — Full Stack Job Portal Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+JobHub is a full-stack Job Portal web application built using the MERN stack.
 
-## Available Scripts
+The platform connects job seekers with recruiters through a modern and responsive interface. Users can browse jobs, search and filter opportunities, save jobs, and apply for positions, while recruiters can manage job postings through a dedicated dashboard.
 
-In the project directory, you can run:
+The project focuses on authentication, role-based access control, job management, recruiter workflows, and responsive user experience.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 🚀 Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🌐 Frontend
 
-### `npm test`
+https://j0bhubb.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🌐 Backend
 
-### `npm run build`
+https://job-portal-be-l7ra.onrender.com
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 👥 User Roles
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 👨‍💻 Job Seeker
 
-### `npm run eject`
+- Browse available jobs
+- Search jobs by keyword
+- Filter jobs by category, location, and job type
+- View detailed job information
+- Save jobs for later
+- Apply for jobs
+- Manage profile
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧑‍💼 Recruiter
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Post new jobs
+- Edit existing jobs
+- Delete job listings
+- View applications
+- Manage job postings through dashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🛡️ Admin
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Manage users
+- Manage recruiters
+- Monitor job listings
+- View platform activity
+- Access admin dashboard
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+# ✨ Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🏢 Job Listings
 
-### Analyzing the Bundle Size
+- Responsive job cards
+- Detailed job pages
+- Company information
+- Salary information
+- Experience requirements
+- Skills & technologies
+- Application tracking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🔍 Search & Filtering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Search by job title
+- Search by company
+- Filter by location
+- Filter by category
+- Filter by job type
+- Filter by experience level
 
-### Advanced Configuration
+### Supported Categories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Development
+- Design
+- Marketing
+- Finance
+- Data Science
+- Human Resources
+- Business
+- Customer Support
+- Cyber Security
+- Sales
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ❤️ Saved Jobs
 
-### `npm run build` fails to minify
+- Save jobs for later
+- Remove saved jobs
+- Dedicated saved jobs section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 📄 Job Applications
+
+- Apply to jobs
+- Track application status
+- Recruiters can review applicants
+- Application management dashboard
+
+---
+
+## 📊 Dashboards
+
+### Recruiter Dashboard
+
+- Create jobs
+- Update jobs
+- Delete jobs
+- Manage applications
+- View posted jobs
+
+### Admin Dashboard
+
+- Manage users
+- Manage recruiters
+- Manage jobs
+- View platform statistics
+
+---
+
+# 🔐 Authentication & Security
+
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
+- Role-Based Authorization
+- Secure Password Hashing using bcrypt
+
+---
+
+# 📱 Responsive Design
+
+- Fully Responsive UI
+- Mobile Friendly Design
+- Modern Dashboard Layouts
+- Optimized for Desktop, Tablet, and Mobile Devices
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React.js
+- Tailwind CSS
+- React Router DOM
+- React Icons
+- Axios
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Database
+
+- MongoDB
+- Mongoose
+
+## Authentication
+
+- JWT
+- bcrypt.js
+
+---
+
+# 📁 Project Structure
+
+```bash
+jobhub/
+│
+├── fe/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── routes/
+│   │   └── utils/
+│   │
+│   └── public/
+│
+├── be/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   └── utils/
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone 
+
+https://github.com/akhilacodesss/job-portal-fe
+
+https://github.com/akhilacodesss/job-portal-be
+```
+
+### Frontend Setup
+
+```bash
+cd fe
+npm install
+npm start
+```
+
+### Backend Setup
+
+```bash
+cd be
+npm install
+npm run dev
+```
+
+### Environment Variables
+
+Create a `.env` file inside the backend folder:
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+```
+
+---
+
+# 📸 Pages Included
+
+### Home Page
+
+- Hero Section
+- Featured Jobs
+- Categories
+- Companies
+- Testimonials
+
+### Jobs Page
+
+- Search & Filters
+- Job Listings
+- Pagination
+
+### Job Details Page
+
+- Job Overview
+- Company Information
+- Similar Jobs
+
+### Categories Page
+
+- Category Search
+- Category Grid
+
+### About Page
+
+- Company Overview
+- Mission
+- Values
+- Team
+
+### Contact Page
+
+- Contact Form
+- Contact Information
+
+### Authentication
+
+- Login
+- Register
+- Role Selection
+
+---
+
+# 🎯 Future Improvements
+
+- Resume Upload
+- Email Notifications
+- Advanced Search Filters
+- Company Profiles
+- Interview Scheduling
+- Real-Time Messaging
+- AI Job Recommendations
+
+---
+
+# 👨‍💻 Author
+
+**Akhila**
+
+Aspiring Full Stack Developer passionate about building scalable web applications using the MERN stack.
+
+This project demonstrates frontend development, backend APIs, authentication, database design, responsive UI development, and role-based access control.
+
+GitHub: https://github.com/akhilacodesss/
+
+LinkedIn: https://www.linkedin.com/in/akhila-goud-278b8537b/
