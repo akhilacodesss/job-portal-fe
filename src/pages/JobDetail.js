@@ -248,13 +248,13 @@ function JobDetail() {
         </span>
       </div>
 
-      <div className="grid lg:grid-cols-[1fr_340px] gap-8">
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_340px] gap-8">
         {/* LEFT */}
         <div>
           {/* HEADER CARD */}
           <div className="bg-white border border-gray-100 rounded-2xl p-8">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
-              <div className="flex gap-6 flex-1">
+              <div className="flex flex-col sm:flex-row gap-6 flex-1 min-w-0">
                 <div className="w-24 h-24 rounded-2xl border flex items-center justify-center shrink-0">
                  <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
   <span className="text-indigo-600 font-bold text-xl">
@@ -264,17 +264,17 @@ function JobDetail() {
                 </div>
 
                 <div className="flex-1">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-md">
                       New
                     </span>
                   </div>
 
-                  <h1 className="text-4xl font-bold mt-2">
+                  <h1 className="text-2xl md:text-4xl font-bold mt-2 break-words">
                     {job.title}
                   </h1>
 
-                  <p className="text-lg text-gray-500 mt-2">
+                  <p className="text-lg text-gray-500 mt-2 break-words">
                     {job.company}
                   </p>
 

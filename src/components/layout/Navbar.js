@@ -90,14 +90,23 @@ function Navbar() {
   </NavLink>
 )}
 
-  {role === "jobseeker" && (
+ {role === "jobseeker" && (
+  <>
     <NavLink
       to="/dashboard"
       className={navLinkClass}
     >
       Dashboard
     </NavLink>
-  )}
+
+    <NavLink
+      to="/profile"
+      className={navLinkClass}
+    >
+      My Profile
+    </NavLink>
+  </>
+)}
 
   {role === "recruiter" && (
     <NavLink
@@ -170,7 +179,7 @@ function Navbar() {
           {/* Mobile Menu */}
          {/* Mobile Menu */}
 {menuOpen && (
-  <div className="md:hidden border-t py-4 flex flex-col gap-4">
+  <div className="md:hidden border-t py-4 flex flex-col gap-5 text-lg font-medium">
 
     <NavLink
       to="/"
@@ -216,14 +225,23 @@ function Navbar() {
       </NavLink>
     )}
 
-    {role === "jobseeker" && (
-      <NavLink
-        to="/dashboard"
-        onClick={() => setMenuOpen(false)}
-      >
-        Dashboard
-      </NavLink>
-    )}
+   {role === "jobseeker" && (
+  <>
+    <NavLink
+      to="/dashboard"
+      onClick={() => setMenuOpen(false)}
+    >
+      Dashboard
+    </NavLink>
+
+    <NavLink
+      to="/profile"
+      onClick={() => setMenuOpen(false)}
+    >
+      My Profile
+    </NavLink>
+  </>
+)}
 
     {role === "recruiter" && (
       <NavLink

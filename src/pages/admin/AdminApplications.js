@@ -49,9 +49,9 @@ function AdminApplications() {
             Applications
           </h1>
 
-          <div className="bg-white rounded-2xl border overflow-hidden">
+          <div className="bg-white rounded-2xl border overflow-x-auto">
 
-            <table className="w-full">
+            <table className="w-full min-w-[700px]">
               <thead className="bg-slate-100">
                 <tr>
                   <th className="p-4 text-left">
@@ -92,19 +92,19 @@ function AdminApplications() {
                       key={app._id}
                       className="border-t"
                     >
-                      <td className="p-4">
+                      <td className="p-4 break-words">
                         {app.applicant?.name}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 break-words max-w-[250px]">
                         {app.job?.title}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 break-words">
                         {app.recruiter?.name}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 whitespace-nowrap ">
                         <span
                           className={`
                             px-3

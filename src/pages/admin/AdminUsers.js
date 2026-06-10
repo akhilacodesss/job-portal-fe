@@ -82,8 +82,8 @@ function AdminUsers() {
             Manage Users
           </h1>
 
-          <div className="bg-white rounded-2xl border overflow-hidden">
-            <table className="w-full">
+          <div className="bg-white rounded-2xl border overflow-x-auto">
+            <table className="w-full min-w-[750px]">
               <thead className="bg-slate-100">
                 <tr>
                   <th className="p-4 text-left">
@@ -128,11 +128,11 @@ function AdminUsers() {
                       key={user._id}
                       className="border-t"
                     >
-                      <td className="p-4">
+                      <td className="p-4 break-words">
                         {user.name}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 break-all">
                         {user.email}
                       </td>
 
@@ -141,7 +141,7 @@ function AdminUsers() {
                           user.role.slice(1)}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 whitespace-nowrap">
                         <span
                           className={`px-3 py-1 rounded-full text-xs ${
                             user.isActive
@@ -161,7 +161,7 @@ function AdminUsers() {
                         ).toLocaleDateString()}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4  whitespace-nowrap">
                         {user.role === "admin" ? (
                           <span className="text-gray-400">
                             Protected

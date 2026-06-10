@@ -19,7 +19,7 @@ function AdminJobs() {
 
     try {
       const res = await fetch(
-       `${process.env.REACT_APP_API_URL}/admin/jobs`,
+        `${process.env.REACT_APP_API_URL}/admin/jobs`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -82,8 +82,8 @@ function AdminJobs() {
             Manage Jobs
           </h1>
 
-          <div className="bg-white rounded-2xl border overflow-hidden">
-            <table className="w-full">
+          <div className="bg-white rounded-2xl border overflow-x-auto">
+            <table className="w-full min-w-[800px]">
               <thead className="bg-slate-100">
                 <tr>
                   <th className="p-4 text-left">
@@ -128,7 +128,7 @@ function AdminJobs() {
                       key={job._id}
                       className="border-t"
                     >
-                      <td className="p-4">
+                      <td className="p-4 max-w-[220px] break-words">
                         {job.title}
                       </td>
 
@@ -136,18 +136,16 @@ function AdminJobs() {
                         {job.company}
                       </td>
 
-                      <td className="p-4">
-                        {job.recruiter?.name ||
-                          "Unknown"}
+                      <td className="p-4 break-words">
+                        {job.recruiter?.name || "Unknown"}
                       </td>
 
-                      <td className="p-4">
+                      <td className="p-4 whitespace-nowrap">
                         <span
-                          className={`px-3 py-1 rounded-full text-xs ${
-                            job.status === "active"
+                          className={`px-3 py-1 rounded-full text-xs ${job.status === "active"
                               ? "bg-green-100 text-green-700"
                               : "bg-gray-100 text-gray-700"
-                          }`}
+                            }`}
                         >
                           {job.status.charAt(0).toUpperCase() +
                             job.status.slice(1)}

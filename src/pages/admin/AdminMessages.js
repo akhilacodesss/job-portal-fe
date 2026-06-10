@@ -19,7 +19,7 @@ function AdminMessages() {
 
     try {
       const res = await fetch(
-       `${process.env.REACT_APP_API_URL}/contact`,
+        `${process.env.REACT_APP_API_URL}/contact`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -120,9 +120,9 @@ function AdminMessages() {
                   key={message._id}
                   className="bg-white border rounded-2xl p-6"
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex flex-col md:flex-row justify-between items-start gap-4">
 
-                    <div>
+                    <div className="flex-1 min-w-0">
 
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-semibold">
@@ -130,11 +130,10 @@ function AdminMessages() {
                         </h3>
 
                         <span
-                          className={`px-2 py-1 text-xs rounded-full ${
-                            message.isRead
+                          className={`px-2 py-1 text-xs rounded-full ${message.isRead
                               ? "bg-green-100 text-green-700"
                               : "bg-yellow-100 text-yellow-700"
-                          }`}
+                            }`}
                         >
                           {message.isRead
                             ? "Read"
@@ -142,7 +141,7 @@ function AdminMessages() {
                         </span>
                       </div>
 
-                      <p className="text-slate-500 text-sm">
+                      <p className="text-slate-500 text-sm break-all">
                         {message.email}
                       </p>
 
@@ -150,13 +149,13 @@ function AdminMessages() {
                         {message.subject}
                       </p>
 
-                      <p className="text-slate-600 mt-2">
+                      <p className="text-slate-600 mt-2 break-words">
                         {message.message}
                       </p>
 
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2 w-full md:w-auto">
 
                       {!message.isRead && (
                         <button
@@ -164,7 +163,8 @@ function AdminMessages() {
                             markAsRead(message._id)
                           }
                           className="
-                            bg-green-500
+  w-full md:w-auto
+  bg-green-500
                             hover:bg-green-600
                             text-white
                             px-3
@@ -182,6 +182,7 @@ function AdminMessages() {
                           deleteMessage(message._id)
                         }
                         className="
+                        w-full md:w-auto
                           bg-red-500
                           hover:bg-red-600
                           text-white

@@ -12,9 +12,9 @@ function AdminSidebar() {
   ];
 
   return (
-    <aside className="w-64 min-h-screen sticky top-0 bg-white border-r shrink-0">
+    <aside className="hidden md:block w-64 min-h-screen sticky top-0 bg-white border-r shrink-0">
       <div className="p-6 border-b">
-        <h2 className="text-2xl font-bold text-indigo-600">
+        <h2 className="text-xl md:text-2xl font-bold text-indigo-600">
           JobHub Admin
         </h2>
 
